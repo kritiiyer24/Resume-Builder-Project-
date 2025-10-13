@@ -2,13 +2,111 @@
     <head></head>
     <title></title>
     <body>
-<h1 id="a1">I Am In Forms</h1>
+
+<!-- Profile Picture -->
+ <h1 id="Enter_Information">Enter Your Information Below</h1>
+ <br>
+    <div class="container">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Name</label>
+    <input type="form-control" class="form-control" id="name" placeholder="Enter First and Last Name">
+  </div>
+<span id="nameError"></span>
+
+  <br>
+
+  <div class="container">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Profession</label>
+    <input type="form-control" class="form-control" id="profession" placeholder="Enter Profession Name">
+  </div>
+<span id="professionError"></span>
+
+  <br>
+
+  <div class="container">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Phone Number</label>
+    <input type="form-control" class="form-control" id="phone_number" placeholder="(---)(---)(----)">
+  </div>
+<span id="phone_numberError"></span>
+
+  <br>
+
+  <div class="container">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Email</label>
+    <input type="email" class="form-control" id="email" placeholder="Enter Your Email">
+  </div>
+<span id="emailError"></span>
+
+  <br>
+
 <div class="container">
   <div class="form-group">
-    <label for="exampleFormControlInput1">Email address</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    <label for="exampleFormControlInput1">Website Name (optional)</label>
+    <input type="form-control" class="form-control" id="website_name" placeholder="Enter Your Website Title">
   </div>
+<span id="website_nameError"></span>
+
+  <br>
+
+  <div class="container">
   <div class="form-group">
+    <label for="exampleFormControlInput1">Location (optional) </label>
+    <input type="form-control" class="form-control" id="location" placeholder="Enter Where You're Located">
+  </div>
+<span id="locationError"></span>
+
+  <br>
+
+<div class="container">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Education</label>
+    <input type="form-control" class="form-control" id="education" placeholder="Bachelors, Masters, etc.">
+  </div>
+<span id="educationError"></span>
+
+  <br>
+
+  <div class="container">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Expertise</label>
+    <input type="form-control" class="form-control" id="expertise" placeholder="Digital marketing, Branding, etc. ">
+  </div>
+<span id="expertiseError"></span>
+
+  <br>
+
+  <div class="container">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Language(s)</label>
+    <input type="form-control" class="form-control" id="language" placeholder="Languages you are fluent in.">
+  </div>
+<span id="languageError"></span>
+
+  <br>
+
+<div class="form-group">
+    <label for="exampleFormControlTextarea1">Profile</label>
+    <textarea class="form-control" id="profile" rows="5" placeholder="Short Write-Up About Yourself."></textarea>
+  </div>
+<span id="profileError"></span>
+
+<br>
+
+<div class="form-group">
+    <label for="exampleFormControlTextarea1">Work Experience</label>
+    <textarea class="form-control" id="work_experience" rows="10" placeholder="Write About Your Work Experience Over the Years."></textarea>
+  </div>
+<span id="work_experienceError"></span>
+
+<br> 
+
+    <button onclick="validate()">Submit</button>
+    <p id="displayValues"></p>
+
+  <!-- <div class="form-group">
     <label for="exampleFormControlSelect1">Example select</label>
     <select class="form-control" id="exampleFormControlSelect1">
       <option>1</option>
@@ -27,11 +125,6 @@
       <option>4</option>
       <option>5</option>
     </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">Example textarea</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
-</div>
+  </div> -->
     </body>
 </html>
