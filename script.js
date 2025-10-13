@@ -5,6 +5,7 @@ function validate(){
     var email=document.getElementById("email").value;
     var website_name=document.getElementById("website_name").value; 
     var location=document.getElementById("location").value; 
+    var education=document.getElementById("education").value; 
     var expertise=document.getElementById("expertise").value;
     var language=document.getElementById("language").value;
     var profile=document.getElementById("profile").value;
@@ -47,8 +48,18 @@ if(email==="")
 }
 
 else{ 
-    document.getElementById("emailError").innerHTML=""; 
+    document.getElementById("educationError").innerHTML=""; 
 } 
+
+if(profession==="")
+{ 
+    document.getElementById("educationError").innerHTML="Education Cannot Be Empty"; 
+    document.getElementById("educationError").style="color:red";
+}
+
+else{ 
+    document.getElementById("educationError").innerHTML=""; 
+}
 
 if(expertise==="")
 { 
@@ -90,6 +101,11 @@ else{
     document.getElementById("work_experienceError").innerHTML=""; 
 } 
 
-document.getElementById("displayValues").innerHTML=`Name:${name}, <br> Profession:${profession}, <br> Phone Number: ${[phone_number]}, 
-<br> Email:${email}, <br> Website Name:${website_name}, <br> Location:${location}, <br> Expertise:${expertise}, <br> Language(s): ${[language]}, <br> Profile:${profile}, <br> Work Experience:${work_experience}`
+// document.getElementById("displayValues").innerHTML=`Name:${name}, <br> Profession:${profession}, <br> Phone Number: ${[phone_number]}, 
+// <br> Email:${email}, <br> Website Name:${website_name}, <br> Location:${location}, <br> Education:${education}, <br> Expertise:${expertise}, <br> Language(s): ${[language]}, <br> Profile:${profile}, <br> Work Experience:${work_experience}`
+// 
+localStorage.setItem("Name",name) 
+localStorage.setItem("Profession",profession) 
+localStorage.setItem("Phone Number",phone_number) 
+window.location.href="resume.html"
 } 
