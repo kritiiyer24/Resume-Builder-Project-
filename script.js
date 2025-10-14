@@ -107,5 +107,14 @@ else{
 localStorage.setItem("Name",name) 
 localStorage.setItem("Profession",profession) 
 localStorage.setItem("Phone Number",phone_number) 
+localStorage.setItem("Profile",profile); 
+localStorage.setItem("Work Experience",work_experience); 
+localStorage.setItem("Location",location); 
+localStorage.setItem("Email", email); 
+localStorage.setItem("Expertise", expertise); 
+localStorage.setItem("Education", education); 
+localStorage.setItem("Website Name",website_name); 
+localStorage.setItem("Language(s)", language); 
+
 window.location.href="resume.html"
 } 
