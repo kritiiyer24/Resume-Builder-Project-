@@ -1,131 +1,207 @@
-<html> 
-    <head></head>
-    <title></title>
-    <body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Information Form</title>
+  <style>
+    /* --- Reset & Base Styles --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
 
-<!-- Profile Picture -->
- <h1 id="Enter_Information">Enter Your Information Below</h1>
- <br>
-    <div class="container">
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Name</label>
-    <input type="form-control" class="form-control" id="name" placeholder="Enter First and Last Name">
-  </div>
-<span id="nameError"></span>
+    body {
+      background: linear-gradient(135deg, #2b2b2b, #1a1a1a);
+      color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 50px 20px;
+    }
 
-  <br>
+    /* --- Form Container --- */
+    .form-card {
+      background: #242424;
+      padding: 40px 50px;
+      border-radius: 16px;
+      box-shadow: 0 0 25px rgba(0, 255, 180, 0.2);
+      max-width: 600px;
+      width: 100%;
+      animation: fadeIn 0.6s ease;
+    }
 
-  <div class="container">
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Profession</label>
-    <input type="form-control" class="form-control" id="profession" placeholder="Enter Profession Name">
-  </div>
-<span id="professionError"></span>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-  <br>
+    h1 {
+      text-align: center;
+      color: #00ffb3;
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      letter-spacing: 1px;
+    }
 
-  <div class="container">
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Phone Number</label>
-    <input type="form-control" class="form-control" id="phone_number" placeholder="(---)(---)(----)">
-  </div>
-<span id="phone_numberError"></span>
+    /* --- Input Fields --- */
+    .form-group {
+      margin-bottom: 20px;
+    }
 
-  <br>
+    label {
+      display: block;
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+      color: #ccc;
+    }
 
-  <div class="container">
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Email</label>
-    <input type="email" class="form-control" id="email" placeholder="Enter Your Email">
-  </div>
-<span id="emailError"></span>
+    input, textarea {
+      width: 100%;
+      padding: 10px 14px;
+      background: #333;
+      border: 1px solid #444;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
 
-  <br>
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #00ffb3;
+      box-shadow: 0 0 8px #00ffb3;
+      background: #2d2d2d;
+    }
 
-<div class="container">
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Website Name (optional)</label>
-    <input type="form-control" class="form-control" id="website_name" placeholder="Enter Your Website Title">
-  </div>
-<span id="website_nameError"></span>
+    textarea {
+      resize: none;
+    }
 
-  <br>
+    span {
+      color: #ff5f5f;
+      font-size: 0.8rem;
+    }
 
-  <div class="container">
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Location (optional) </label>
-    <input type="form-control" class="form-control" id="location" placeholder="Enter Where You're Located">
-  </div>
-<span id="locationError"></span>
+    /* --- Button --- */
+    button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(90deg, #00ffb3, #00b8ff);
+      border: none;
+      border-radius: 8px;
+      color: #000;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
 
-  <br>
+    button:hover {
+      background: linear-gradient(90deg, #00b8ff, #00ffb3);
+      box-shadow: 0 0 12px #00ffb3;
+      transform: scale(1.02);
+    }
 
-<div class="container">
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Education</label>
-    <input type="form-control" class="form-control" id="education" placeholder="Bachelors, Masters, etc.">
-  </div>
-<span id="educationError"></span>
+    /* --- Responsive --- */
+    @media (max-width: 600px) {
+      .form-card {
+        padding: 30px 25px;
+      }
 
-  <br>
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
 
-  <div class="container">
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Expertise</label>
-    <input type="form-control" class="form-control" id="expertise" placeholder="Digital marketing, Branding, etc. ">
-  </div>
-<span id="expertiseError"></span>
+    /* --- Display Output --- */
+    #displayValues {
+      margin-top: 20px;
+      color: #00ffb3;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      white-space: pre-wrap;
+    }
 
-  <br>
+  </style>
+</head>
 
-  <div class="container">
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Language(s)</label>
-    <input type="form-control" class="form-control" id="language" placeholder="Languages you are fluent in.">
-  </div>
-<span id="languageError"></span>
+<body>
+  <div class="form-card">
+    <h1>Enter Your Information Below</h1>
 
-  <br>
+    <div class="form-group">
+      <label>Name</label>
+      <input id="name" placeholder="Enter First and Last Name">
+      <span id="nameError"></span>
+    </div>
 
-<div class="form-group">
-    <label for="exampleFormControlTextarea1">Profile</label>
-    <textarea class="form-control" id="profile" rows="5" placeholder="Short Write-Up About Yourself."></textarea>
-  </div>
-<span id="profileError"></span>
+    <div class="form-group">
+      <label>Profession</label>
+      <input id="profession" placeholder="Enter Profession Name">
+      <span id="professionError"></span>
+    </div>
 
-<br>
+    <div class="form-group">
+      <label>Phone Number</label>
+      <input id="phone_number" placeholder="(---)(---)(----)">
+      <span id="phone_numberError"></span>
+    </div>
 
-<div class="form-group">
-    <label for="exampleFormControlTextarea1">Work Experience</label>
-    <textarea class="form-control" id="work_experience" rows="10" placeholder="Write About Your Work Experience Over the Years."></textarea>
-  </div>
-<span id="work_experienceError"></span>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" id="email" placeholder="Enter Your Email">
+      <span id="emailError"></span>
+    </div>
 
-<br> 
+    <div class="form-group">
+      <label>Website Name (optional)</label>
+      <input id="website_name" placeholder="Enter Your Website Title">
+      <span id="website_nameError"></span>
+    </div>
 
-    <button onclick="validate()">Submit</button>
+    <div class="form-group">
+      <label>Location (optional)</label>
+      <input id="location" placeholder="Enter Where You're Located">
+      <span id="locationError"></span>
+    </div>
+
+    <div class="form-group">
+      <label>Education</label>
+      <input id="education" placeholder="Bachelors, Masters, etc.">
+      <span id="educationError"></span>
+    </div>
+
+    <div class="form-group">
+      <label>Expertise</label>
+      <input id="expertise" placeholder="Digital marketing, Branding, etc.">
+      <span id="expertiseError"></span>
+    </div>
+
+    <div class="form-group">
+      <label>Language(s)</label>
+      <input id="language" placeholder="Languages you are fluent in.">
+      <span id="languageError"></span>
+    </div>
+
+    <div class="form-group">
+      <label>Profile</label>
+      <textarea id="profile" rows="5" placeholder="Short Write-Up About Yourself."></textarea>
+      <span id="profileError"></span>
+    </div>
+
+    <div class="form-group">
+      <label>Work Experience</label>
+      <textarea id="work_experience" rows="8" placeholder="Write About Your Work Experience Over the Years."></textarea>
+      <span id="work_experienceError"></span>
+    </div>
+
+    <button onclick="validate(event)" type="button">Submit</button>
     <p id="displayValues"></p>
-
-  <!-- <div class="form-group">
-    <label for="exampleFormControlSelect1">Example select</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
   </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect2">Example multiple select</label>
-    <select multiple class="form-control" id="exampleFormControlSelect2">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div> -->
-    </body>
+</body>
   <script src="script.js"></script>
 </html>

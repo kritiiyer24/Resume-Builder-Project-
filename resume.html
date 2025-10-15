@@ -23,9 +23,12 @@
         </div>
         <p id="location"></p>
         <p id="phone_number"></p>
-        <p id="email"></p><br>
-        <p id="website_name"></p><br>
-        <p id="language"></p><br>
+        <p id="email"></p>
+        <p id="website_name"></p>
+        <p id="language"></p>
+        <p class="rela-block social twitter">Twitter stuff</p>
+        <p class="rela-block social pinterest">Pinterest things</p>
+        <p class="rela-block social linked-in">Linked-in man</p>
         <p class="rela-block caps side-header">Expertise</p>
         <p class="rela-block list-thing" id="expertise"></p>
         <p class="rela-block caps side-header">Education</p>
@@ -48,7 +51,7 @@
     var phone_number=localStorage.getItem("Phone Number"); 
     var profile=localStorage.getItem("Profile"); 
     var work_experience=localStorage.getItem("Work Experience"); 
-    var location=localStorage.getItem("Location"); 
+    var locations=localStorage.getItem("Location"); 
     var email=localStorage.getItem("Email"); 
     var expertise=localStorage.getItem("Expertise"); 
     var education=localStorage.getItem("Education"); 
@@ -60,7 +63,7 @@
     document.getElementById("profession").innerHTML=profession; 
     document.getElementById("profile").innerHTML=profile; 
     document.getElementById("work_experience").innerHTML=work_experience; 
-    document.getElementById("location").innerHTML=location; 
+    document.getElementById("location").innerHTML=locations; 
     document.getElementById("email").innerHTML=email; 
     document.getElementById("expertise").innerHTML=expertise; 
     document.getElementById("education").innerHTML=education; 

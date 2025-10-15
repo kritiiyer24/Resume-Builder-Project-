@@ -1,10 +1,11 @@
-function validate(){ 
+function validate(event){
+    if (event) event.preventDefault(); 
     var name=document.getElementById("name").value;
     var profession=document.getElementById("profession").value;
     var phone_number=document.getElementById("phone_number").value;
     var email=document.getElementById("email").value;
     var website_name=document.getElementById("website_name").value; 
-    var location=document.getElementById("location").value; 
+    var locations=document.getElementById("location").value; 
     var education=document.getElementById("education").value; 
     var expertise=document.getElementById("expertise").value;
     var language=document.getElementById("language").value;
@@ -103,17 +104,17 @@ else{
 
 // document.getElementById("displayValues").innerHTML=`Name:${name}, <br> Profession:${profession}, <br> Phone Number: ${[phone_number]}, 
 // <br> Email:${email}, <br> Website Name:${website_name}, <br> Location:${location}, <br> Education:${education}, <br> Expertise:${expertise}, <br> Language(s): ${[language]}, <br> Profile:${profile}, <br> Work Experience:${work_experience}`
-// 
-localStorage.setItem("Name",name) 
-localStorage.setItem("Profession",profession) 
-localStorage.setItem("Phone Number",phone_number) 
+
+localStorage.setItem("Name",name);  
+localStorage.setItem("Profession",profession);  
+localStorage.setItem("Phone Number",phone_number); 
 localStorage.setItem("Profile",profile); 
 localStorage.setItem("Work Experience",work_experience); 
-localStorage.setItem("Location",location); 
+localStorage.setItem("Location",locations); 
 localStorage.setItem("Email", email); 
 localStorage.setItem("Expertise", expertise); 
 localStorage.setItem("Education", education); 
-localStorage.setItem("Website Name",website_name); 
+localStorage.setItem("Website Name",website_name) 
 localStorage.setItem("Language(s)", language); 
 
 window.location.href="resume.html"
